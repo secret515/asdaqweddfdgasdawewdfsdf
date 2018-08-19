@@ -267,3 +267,5 @@ client.on('message', message => {
   }
 });
 // الفا كود واذا حقوق احد راسل جاكيو
+
+client.login(process.env.BOT_TOKEN);
