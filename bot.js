@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
 client.on('message', async message => {
             if(!message.channel.guild) return;
              if (message.content.startsWith("*sets")) {
