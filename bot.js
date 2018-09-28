@@ -1,24 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('message', message => {
- if(message.content.startsWith(! + "تعال")) {
-message.member.voiceChannel.join();
-}
+const swearWords = ["كلمة", "كلمة", "كلمة", "كلمة", "كلمة", "كلمة", "كلمة", "كلمة", "كلمة", "كلمة", "كلمة", "كلمة"]; 
+  if( swearWords.some(word => message.content.includes(word)) ) {
+    message.reply("مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ").then(sentMessage =>{
+      sentMessage.delete(20000)
+    })
+    message.delete(3000)
+    client.channels.get('ايدي الروم').send(message.author.toString() + "استخدم كلام لا يليق ~")
+  }
 });
-
-==============================
-client.on('message', msg => {
-
-    if (msg.content == '1join') {
-        if (msg.member.voiceChannel) {
-
-     if (msg.member.voiceChannel.joinable) {
-         msg.member.voiceChannel.join().then(msg.react('✅'));
-     }
-    }
-}
-})
-client.on('ready', () => {
-    client.channels.get("ايدي الروم").join();
-    });
