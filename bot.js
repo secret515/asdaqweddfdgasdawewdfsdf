@@ -10,3 +10,6 @@ const swearWords = ["كلمة", "كلمة", "كلمة", "كلمة", "كلمة", 
     client.channels.get('ايدي الروم').send(message.author.toString() + "استخدم كلام لا يليق ~")
   }
 });
+
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
